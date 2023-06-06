@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 
 const token = '6068075219:AAFlO0D2naLv5v6QVYb-pwk2nWu1md2b09A';
-const webAppUrl = 'https://friendly-biscuit-ced272.netlify.app/';
+const webAppUrl = 'https://friendly-biscuit-ced272.netlify.app';
 
 const bot = new TelegramBot(token, {polling: true});
 const app = express();
