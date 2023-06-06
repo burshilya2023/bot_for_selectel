@@ -1,11 +1,10 @@
 const TelegramBot = require('node-telegram-bot-api');
-const token = '6068075219:AAFlO0D2naLv5v6QVYb-pwk2nWu1md2b09A';
 const express = require('express');
 const cors = require('cors');
 
+const token = '6068075219:AAFlO0D2naLv5v6QVYb-pwk2nWu1md2b09A';
+const webAppUrl = 'https://friendly-biscuit-ced272.netlify.app/';
 
-// !ulibitv site
-const webAppUrl = "https://storied-klepon-eb05b0.netlify.app/";
 const bot = new TelegramBot(token, {polling: true});
 const app = express();
 
@@ -49,7 +48,6 @@ bot.on('message', async (msg) => {
             console.log(e);
         }
     }
-   
 });
 
 app.post('/web-data', async (req, res) => {
