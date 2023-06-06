@@ -5,10 +5,8 @@ const cors = require('cors');
 
 
 // !ulibitv site
-// const webAppUrl = 'https://ornate-selkie-c27577.netlify.app'; 
-// const webAppUrl = 'https://superlative-bonbon-04762c.netlify.app';
-const webAppUrl = "https://comfy-panda-d8f766.netlify.app"
-const webAppUrlForm = "https://comfy-panda-d8f766.netlify.app/form"
+ const webAppUrl = 'https://ornate-selkie-c27577.netlify.app'; 
+// const webAppUrl = "https://comfy-panda-d8f766.netlify.app"
 const bot = new TelegramBot(token, {polling: true});
 const app = express();
 
@@ -23,7 +21,7 @@ bot.on('message', async (msg) => {
         await bot.sendMessage(chatId, 'Ниже появится кнопка, заполни форму', {
             reply_markup: {
                 keyboard: [
-                    [{text: 'Заполнить форму', web_app: {url: webAppUrlForm}}]
+                    [{text: 'Заполнить форму', web_app: {url: webAppUrl + '/form'}}]
                 ]
             }
         })
