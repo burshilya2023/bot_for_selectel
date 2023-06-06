@@ -5,8 +5,7 @@ const cors = require('cors');
 
 
 // !ulibitv site
-//  const webAppUrl = 'https://ornate-selkie-c27577.netlify.app'; 
-const webAppUrl = "https://comfy-panda-d8f766.netlify.app"
+const webAppUrl = "https://storied-klepon-eb05b0.netlify.app/";
 const bot = new TelegramBot(token, {polling: true});
 const app = express();
 
