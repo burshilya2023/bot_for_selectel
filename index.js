@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const token = '6068075219:AAFlO0D2naLv5v6QVYb-pwk2nWu1md2b09A';
 const webAppUrl = 'https://friendly-biscuit-ced272.netlify.app';
-
+const web2='https://647f53755a79460008e68019--friendly-biscuit-ced272.netlify.app'
 const bot = new TelegramBot(token, {polling: true});
 const app = express();
 
@@ -54,7 +54,8 @@ app.post('/web-data', async (req, res) => {
     const {queryId, products = [], totalPrice} = req.body;
     try {
         console.log('ПОСТ ОТРАБОТАЛ', totalPrice);
-        await bot.answerWebAppQuery(queryId, {
+        //answerWebAppQuery
+        await bot.sendMessage(queryId, {
             type: 'article',
             id: queryId,
             title: 'Успешная покупка',
@@ -65,8 +66,8 @@ app.post('/web-data', async (req, res) => {
         })
         return res.status(200).json({})
     } catch (e) {
-     
-        await bot.answerWebAppQuery(queryId, {
+        //answerWebAppQuery
+        await bot.sendMessage(queryId, {
             type: 'article',
             id: queryId,
             title: 'ОШИБКА СЕРВЕРА',
