@@ -4,7 +4,6 @@ const cors = require('cors');
 
 const token = '6068075219:AAFlO0D2naLv5v6QVYb-pwk2nWu1md2b09A';
 const webAppUrl = 'https://friendly-biscuit-ced272.netlify.app';
-// const web2='https://647f53755a79460008e68019--friendly-biscuit-ced272.netlify.app'
 const bot = new TelegramBot(token, {polling: true});
 const app = express();
 
@@ -80,6 +79,6 @@ app.post('/web-data', async (req, res) => {
     }
 })
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => console.log('server started on PORT ' + PORT))
